@@ -1,0 +1,101 @@
+.parent{
+    display: flex;
+    height: 100vh;
+}
+
+.child-1{
+    width: 50%;
+}
+
+.child-1>div>h2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.child-1>div{
+    width: 50%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 140px;
+}
+
+
+.child-1>div>input{
+    width: 95%;
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 2px;
+
+}
+
+.child-1>div>button{
+    width: 100%;
+    border: 1px solid gray;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #0500ff;
+}
+
+
+.child-2{
+    width: 50%;
+    border-left: 1px solid gray;
+}
+
+.child-2>div{
+    width: 60%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.child-2>div>div{
+    padding: 30px ;
+    background-color: #eaecff;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.child-2>div>div>span{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: 4px;
+    right: 4px;
+    background-color: #0500ff;
+    text-align: center;
+    color: white;
+}
+
+.child-2>div>div>input{
+    width: 95%;
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.child-2>div>button{
+    width: 100%;
+    border: 1px solid gray;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #0500ff;
+}
+
+.child-2>div>h2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@media  screen and (max-width: 500px){
+    .parent{
+        border: 1px solid red;
+        display: block;
+    }
+}
