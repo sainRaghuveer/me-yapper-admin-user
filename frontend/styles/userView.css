@@ -21,3 +21,8 @@ th{
 th, td{
     border: 1px solid black !important;
 }
+
+#userPhoto{
+    width: 100px;
+    height: 100px;
+}

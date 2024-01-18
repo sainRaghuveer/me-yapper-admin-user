@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Manage</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="./styles/admin.css">
 </head>
 
 <body>
@@ -14,10 +14,10 @@
             <div>
                 <h2>Create User</h2>
                 <label for="">User ID</label>
-                <input type="text" placeholder="UserId">
+                <input type="text" placeholder="UserId" id="userIdInput">
                 <label for="">Password</label>
-                <input type="text" placeholder="Password">
-                <button>Create</button>
+                <input type="text" placeholder="Password" id="passwordInput">
+                <button class="create-button">Create</button>
             </div>
         </div>
         <div class="child-2">
@@ -25,17 +25,17 @@
                 <h2>View User</h2>
                 <div>
                     <span>1</span>
-                    <input type="text" placeholder="UserId">
+                    <input type="text" placeholder="UserId" id="userId">
                 </div>
                 <div>
                     <span>2</span>
-                    <input type="text" placeholder="UserId">
+                    <input type="text" placeholder="UserId" id="userPassword">
                 </div>
-                <button>View</button>
+                <button class="userFindButton">View</button>
             </div>
         </div>
     </div>
-
+    <script src="./scripts/admin.js"></script>
 </body>
 
 </html>
