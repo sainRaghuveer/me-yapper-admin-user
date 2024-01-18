@@ -82,64 +82,64 @@ const getUsers = async (req, res) => {
 
 const manageUser = async (req, res) => {
     try {
-      const { userId, action } = req.body;
-  
-      if (req.user.role !== 'admin') {
-        return res.status(403).json({ message: 'Forbidden. Only admin can manage users.' });
-      }
-  
-      const user = await User.findOne({ userId });
-  
-      if (!user) {
-        return res.status(404).json({ message: 'User not found' });
-      }
-  
-      switch (action) {
-        case 'approve':
-          user.profile.approvalStatus = 'approved';
-          break;
-        case 'reject':
-          user.profile.approvalStatus = 'rejected';
-          break;
-        default:
-          return res.status(400).json({ message: 'Invalid action' });
-      }
+        const { userId, action } = req.body;
 
-      await user.save();
-  
-      res.json({ message: `User ${user.userId} ${action === 'approve' ? 'approved' : 'rejected'} successfully` });
+        if (req.user.role !== 'admin') {
+            return res.status(403).json({ message: 'Forbidden. Only admin can manage users.' });
+        }
+
+        const user = await User.findOne({ userId });
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        switch (action) {
+            case 'approve':
+                user.profile.approvalStatus = 'approved';
+                break;
+            case 'reject':
+                user.profile.approvalStatus = 'rejected';
+                break;
+            default:
+                return res.status(400).json({ message: 'Invalid action' });
+        }
+
+        await user.save();
+
+        res.json({ message: `User ${user.userId} ${action === 'approve' ? 'approved' : 'rejected'} successfully` });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Server Error' });
+        console.error(error);
+        res.status(500).json({ message: 'Server Error' });
     }
-  };
+};
 
 
-  const updateUserImage = async (req, res) => {
+const updateUserImage = async (req, res) => {
     try {
-      const { userId, imageData } = req.body;
-  
-      // Find the user based on the provided userId
-      const user = await User.findOne({ userId });
-  
-      if (!user) {
-        return res.status(404).json({ message: 'User not found' });
-      }
-  
-      user.profile.photo = imageData;
-      console.log(`User ${user.userId} has updated their profile image. Awaiting admin approval.`);
-  
-      await user.save();
-  
-      res.json({ message: 'Profile image updated successfully. Awaiting admin approval.' });
+        const { userId, imageData } = req.body;
+
+        // Find the user based on the provided userId
+        const user = await User.findOne({ userId });
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        user.profile.photo = imageData;
+        console.log(`User ${user.userId} has updated their profile image. Awaiting admin approval.`);
+
+        await user.save();
+
+        res.json({ message: 'Profile image updated successfully. Awaiting admin approval.' });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Server Error' });
+        console.error(error);
+        res.status(500).json({ message: 'Server Error' });
     }
-  };
+};
 
 
 
-module.exports={
+module.exports = {
     login, createUser, getUsers, manageUser, updateUserImage
 }
