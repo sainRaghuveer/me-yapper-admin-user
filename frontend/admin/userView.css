@@ -1,0 +1,23 @@
+#back{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #0500ff;
+    border: 1px solid #0500ff;
+    border-radius: 3px;
+    padding: 10px;
+}
+.table-container{
+    width: 80% !important;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+}
+
+th{
+    background-color: #eaecff !important;
+}
+
+th, td{
+    border: 1px solid black !important;
+}
