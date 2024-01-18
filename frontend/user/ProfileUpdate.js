@@ -16,3 +16,13 @@ button.addEventListener("click",()=>{
 
     document.querySelector("body").append(newImage);
 })
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "500px";
+    document.querySelector(".container").style.opacity="0.4"
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.querySelector(".container").style.opacity="1"
+  }
