@@ -49,12 +49,13 @@
     padding: 20px;
     margin: auto;
     margin-top: 100px;
+    text-align: right;
 }
 
 .child-2>div>div{
     padding: 30px ;
     background-color: #eaecff;
-    border-radius: 2px;
+    border-radius: 3px;
     margin-bottom: 20px;
     position: relative;
 }
@@ -80,7 +81,7 @@
 }
 
 .child-2>div>button{
-    width: 100%;
+    width: 25%;
     border: 1px solid gray;
     color: white;
     padding: 8px;
@@ -93,9 +94,26 @@
     margin-bottom: 50px;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 @media  screen and (max-width: 500px){
     .parent{
-        border: 1px solid red;
         display: block;
+    }
+    .child-1{
+        width: 100%;
+    }
+    .child-2{
+        width: 100%;
+    }
+    .child-1>div{
+        width: 70%;
+        margin-top: 0;
+    }
+    .child-2>div{
+        margin-top: 0;
+        width: 70%;
     }
 }
