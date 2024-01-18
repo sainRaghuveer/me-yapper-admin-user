@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile-update</title>
+    <link rel="stylesheet" href="ProfileUpdate.css">
+    <link rel="stylesheet" href="../node_modules/cropperjs/dist/cropper.min.css">
 </head>
 <body>
-    
+    <button id="view">
+        View
+    </button>
+
+    <div class="container">
+        <div>
+            <input type="text" id="name" placeholder="Name">
+        </div>
+        <div class="image">
+            <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" alt="" id="image">
+        </div>
+        <button id="btn">Upload</button>
+    </div>
+
+    <script src="../node_modules//cropperjs/dist/cropper.min.js"></script>
+    <script src="./ProfileUpdate.js"></script>
 </body>
 </html>
