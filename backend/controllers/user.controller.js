@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user.model');
+const {UserModel} = require('../models/user.model');
 
 const generateToken = (user) => {
     return jwt.sign(
@@ -9,11 +9,41 @@ const generateToken = (user) => {
     );
 };
 
+const adminSignup = async (req, res) => {
+    try {
+      const { userId, password, role } = req.body;
+  
+      if (role !== 'admin') {
+        return res.status(403).json({ message: 'Forbidden. Only admin can create admin accounts.' });
+      }
+
+      const existingUser = await UserModel.find({ userId });
+      if (existingUser[0]) {
+        return res.status(400).json({ message: 'Username already taken' });
+      }
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+  
+      const newAdmin = new UserModel({
+        userId,
+        password: hashedPassword,
+        role
+      });
+  
+      const admin = await newAdmin.save();
+  
+      res.status(201).json({ message: 'Admin account created successfully', admin:admin });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server Error' });
+    }
+  };
+
 const login = async (req, res) => {
     const { userId, password } = req.body;
 
     try {
-        const user = await User.findOne({ userId });
+        const user = await UserModel.findOne({ userId });
 
         if (!user) {
             return res.status(401).json({ message: "Invalid credentials" });
@@ -36,20 +66,20 @@ const login = async (req, res) => {
 
 const createUser = async (req, res) => {
     try {
-        const { userId, password } = req.body;
+        const { userId, password, role } = req.body;
 
-        if (req.user.role !== 'admin') {
+        if (role !== 'admin') {
             return res.status(403).json({ message: 'Forbidden. Only admin can create users.' });
         }
 
-        const existingUser = await User.findOne({ userId });
+        const existingUser = await UserModel.findOne({ userId });
         if (existingUser) {
             return res.status(400).json({ message: 'Username already taken' });
         }
 
         const hashedPassword = await bcrypt.hash(password, 5);
 
-        const newUser = new User({
+        const newUser = new UserModel({
             userId,
             password: hashedPassword
         });
@@ -66,15 +96,19 @@ const createUser = async (req, res) => {
 const getUsers = async (req, res) => {
     try {
         const requestingUserRole = req.user.role;
-
-        const limit = requestingUserRole === 'admin' ? 2 : 1;
-        const users = await User.find({ role: requestingUserRole }).limit(limit);
-
-        res.json(users);
-    } catch (error) {
+        const userIds = req.body.userIds;
+    
+        if (requestingUserRole !== 'admin') {
+          return res.status(403).json({ message: 'Forbidden. Only admin can get users.' });
+        }
+    
+        const users = await UserModel.find({ userId: { $in: userIds } });
+    
+        res.status(200).json({ users });
+      } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Internal Server Error' });
-    }
+      }
 };
 
 
@@ -86,7 +120,7 @@ const manageUser = async (req, res) => {
             return res.status(403).json({ message: 'Forbidden. Only admin can manage users.' });
         }
 
-        const user = await User.findOne({ userId });
+        const user = await UserModel.findOne({ userId });
 
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
@@ -103,7 +137,7 @@ const manageUser = async (req, res) => {
                 return res.status(400).json({ message: 'Invalid action' });
         }
 
-        await user.save();
+        await UserModel.save();
 
         res.json({ message: `User ${user.userId} ${action === 'approve' ? 'approved' : 'rejected'} successfully` });
     } catch (error) {
@@ -118,7 +152,7 @@ const updateUserImage = async (req, res) => {
         const { userId, imageData } = req.body;
 
         // Find the user based on the provided userId
-        const user = await User.findOne({ userId });
+        const user = await UserModel.findOne({ userId });
 
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
@@ -139,5 +173,5 @@ const updateUserImage = async (req, res) => {
 
 
 module.exports = {
-    login, createUser, getUsers, manageUser, updateUserImage
+    login, adminSignup, createUser, getUsers, manageUser, updateUserImage
 }

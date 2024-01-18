@@ -22,7 +22,7 @@ const userSchema = mongoose.Schema({
         photo: { type: String, default: 'https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?size=626&ext=jpg' },
         approvalStatus: { type: String, enum: ['pending', 'approved', 'rejected'], default: 'pending' },
     },
-});
+},{ versionKey: false, timestamps: true });
 
 const UserModel = mongoose.model('User', userSchema);
 
