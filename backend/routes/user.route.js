@@ -1,5 +1,5 @@
 const express = require('express');
-const { login, createUser, getUsers, manageUser, updateUserImage, adminSignup } = require('../controllers/user.controller');
+const { login, createUser, getUsers, manageUser, updateUserImage, adminSignup, getUser } = require('../controllers/user.controller');
 const userRouter = express.Router();
 
 
@@ -13,13 +13,16 @@ userRouter.post('/signup', adminSignup);
 userRouter.post('/createUser', createUser);
 
 // Route for admin manage the user
-userRouter.post('/manage', manageUser);
+userRouter.patch('/manage', manageUser);
 
 // Route for user to manage image
 userRouter.post('/user/update', updateUserImage);
 
 // Route for admin fetches users
 userRouter.post('/getUsers', getUsers);
+
+//Route for single user details
+userRouter.get('/:userId', getUser);
 
 module.exports = {
     userRouter

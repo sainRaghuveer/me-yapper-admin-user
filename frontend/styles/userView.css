@@ -26,3 +26,18 @@ th, td{
     width: 100px;
     height: 100px;
 }
+
+.approve-button{
+    border: 1px solid #0500ff;
+    background-color: #0500ff;
+    color: white;
+    padding: 9px;
+    border-radius: 3px;
+}
+
+.reject-button{
+    border: 1px solid #0500ff;
+    color:#0500ff;
+    padding: 9px;
+    border-radius: 3px;
+}

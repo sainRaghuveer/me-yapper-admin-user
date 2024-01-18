@@ -65,7 +65,7 @@ button:hover{
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
   }
   
   .sidenav a {

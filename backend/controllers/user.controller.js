@@ -56,6 +56,7 @@ const login = async (req, res) => {
         }
 
         const token = generateToken(user);
+        console.log(user)
 
         res.json({ token: token, user: user });
     } catch (error) {
@@ -136,8 +137,8 @@ const manageUser = async (req, res) => {
             default:
                 return res.status(400).json({ message: 'Invalid action' });
         }
-
-        await UserModel.save();
+        // console.log(user)
+        await user.save();
 
         res.json({ message: `User ${user.userId} ${action === 'approve' ? 'approved' : 'rejected'} successfully` });
     } catch (error) {
@@ -171,7 +172,24 @@ const updateUserImage = async (req, res) => {
 };
 
 
+const getUser = async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const user = await UserModel.findOne({ userId });
+  
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      res.json(user);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  };
+
+
 
 module.exports = {
-    login, adminSignup, createUser, getUsers, manageUser, updateUserImage
+    login, adminSignup, createUser, getUsers, manageUser, updateUserImage, getUser
 }

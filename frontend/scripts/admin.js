@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       const response = await getUsers(adminToken, [userId1, userId2]);
-    //   console.log(response);
+      console.log(response);
   
       if (response.users) {
         localStorage.setItem('users', JSON.stringify(response.users));

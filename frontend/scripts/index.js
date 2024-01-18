@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loginButton.addEventListener('click', async () => {
     const response = await login(userIdInput.value, passwordInput.value);
-
     if (response.token) {
       localStorage.setItem('token', response.token);
 
       if (response.user.role === 'user') {
+        localStorage.setItem('user', response.user.userId);
         window.location.href = 'ProfileUpdate.html';
       } else if (response.user.role === 'admin') {
         window.location.href = 'admin.html';
