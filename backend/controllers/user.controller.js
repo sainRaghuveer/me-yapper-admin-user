@@ -36,13 +36,13 @@ const login = async (req, res) => {
 
 const createUser = async (req, res) => {
     try {
-        const { userId, password, role, profile } = req.body;
+        const { userId, password } = req.body;
 
         if (req.user.role !== 'admin') {
             return res.status(403).json({ message: 'Forbidden. Only admin can create users.' });
         }
 
-        const existingUser = await User.findOne({ username });
+        const existingUser = await User.findOne({ userId });
         if (existingUser) {
             return res.status(400).json({ message: 'Username already taken' });
         }
@@ -50,10 +50,8 @@ const createUser = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 5);
 
         const newUser = new User({
-            username,
-            password: hashedPassword,
-            role,
-            profile,
+            userId,
+            password: hashedPassword
         });
 
         await newUser.save();
