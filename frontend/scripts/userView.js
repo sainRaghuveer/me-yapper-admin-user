@@ -22,17 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
     tableBody.addEventListener('click', async (event) => {
         if (event.target.classList.contains('approve-button')) {
             const userId = event.target.getAttribute('data-user-id');
+            document.querySelector(".approve-button").innerText="wait..."
             await manageUser(userId, 'approve');
-            alert("user status changed to approved")
+            alert("user status changed to approved");
+            document.querySelector(".approve-button").innerText="Done"
         }
     });
 
     tableBody.addEventListener('click', async (event) => {
         if (event.target.classList.contains('reject-button')) {
             const userId = event.target.getAttribute('data-user-id');
+            document.querySelector(".reject-button").innerText="wait..."
             removeUserFromLocalStorage(userId);
             event.target.closest('tr').remove();
             await manageUser(userId, 'reject');
+            document.querySelector(".reject-button").innerText="Delete"
         }
     });
 
