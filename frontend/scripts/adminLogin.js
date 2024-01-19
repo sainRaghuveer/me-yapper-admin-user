@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else {
             console.error('Login failed:', response.message);
+            alert("Check your credentials, and try again");
         }
     });
 
