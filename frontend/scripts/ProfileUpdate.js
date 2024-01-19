@@ -16,7 +16,7 @@ function hideSpinner(spinnerId) {
 
 //Function for cropping image
 img_upload.addEventListener("change", (e) => {
-  img_upload.innerText="wait...";
+  img_upload.innerText = "wait...";
   const selectedFile = img_upload.files[0];
   console.log(selectedFile)
 

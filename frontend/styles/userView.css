@@ -1,7 +1,8 @@
-nav{
+nav {
     display: none;
 }
-#back{
+
+#back {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -10,27 +11,29 @@ nav{
     border-radius: 3px;
     padding: 10px;
 }
-.table-container{
+
+.table-container {
     width: 80% !important;
     margin: auto;
     margin-top: 60px;
     text-align: center;
 }
 
-th{
+th {
     background-color: #eaecff !important;
 }
 
-th, td{
+th,
+td {
     border: 1px solid black !important;
 }
 
-#userPhoto{
+#userPhoto {
     width: 100px;
     height: 100px;
 }
 
-.approve-button{
+.approve-button {
     border: 1px solid #0500ff;
     background-color: #0500ff;
     color: white;
@@ -38,15 +41,15 @@ th, td{
     border-radius: 3px;
 }
 
-.reject-button{
+.reject-button {
     border: 1px solid #0500ff;
-    color:#0500ff;
+    color: #0500ff;
     padding: 9px;
     border-radius: 3px;
 }
 
 @media screen and (max-width:450px) {
-    nav{
+    nav {
         display: block;
         background-color: #f4f4f4;
         width: 100%;

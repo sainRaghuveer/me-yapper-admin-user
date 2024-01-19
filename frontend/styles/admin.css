@@ -1,21 +1,22 @@
-nav{
+nav {
     display: none;
 }
-.parent{
+
+.parent {
     display: flex;
     height: 100vh;
 }
 
-.child-1{
+.child-1 {
     width: 50%;
 }
 
-.child-1>div>h2{
+.child-1>div>h2 {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.child-1>div{
+.child-1>div {
     width: 50%;
     padding: 20px;
     margin: auto;
@@ -23,7 +24,7 @@ nav{
 }
 
 
-.child-1>div>input{
+.child-1>div>input {
     width: 95%;
     margin-bottom: 20px;
     padding: 8px;
@@ -32,7 +33,7 @@ nav{
 
 }
 
-.child-1>div>button{
+.child-1>div>button {
     width: 100%;
     border: 1px solid gray;
     color: white;
@@ -42,12 +43,12 @@ nav{
 }
 
 
-.child-2{
+.child-2 {
     width: 50%;
     border-left: 1px solid gray;
 }
 
-.child-2>div{
+.child-2>div {
     width: 60%;
     padding: 20px;
     margin: auto;
@@ -55,15 +56,15 @@ nav{
     text-align: right;
 }
 
-.child-2>div>div{
-    padding: 30px ;
+.child-2>div>div {
+    padding: 30px;
     background-color: #eaecff;
     border-radius: 3px;
     margin-bottom: 20px;
     position: relative;
 }
 
-.child-2>div>div>span{
+.child-2>div>div>span {
     position: absolute;
     width: 18px;
     height: 18px;
@@ -75,7 +76,7 @@ nav{
     color: white;
 }
 
-.child-2>div>div>input{
+.child-2>div>div>input {
     width: 95%;
     margin-bottom: 20px;
     padding: 8px;
@@ -83,7 +84,7 @@ nav{
     border-radius: 2px;
 }
 
-.child-2>div>button{
+.child-2>div>button {
     width: 25%;
     border: 1px solid gray;
     color: white;
@@ -92,12 +93,12 @@ nav{
     background-color: #0500ff;
 }
 
-.child-2>div>h2{
+.child-2>div>h2 {
     text-align: center;
     margin-bottom: 50px;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
 
@@ -133,25 +134,30 @@ button:hover{
     }
 }
 
-@media  screen and (max-width: 500px){
-    .parent{
+@media screen and (max-width: 500px) {
+    .parent {
         display: block;
     }
-    .child-1{
+
+    .child-1 {
         width: 100%;
     }
-    .child-2{
+
+    .child-2 {
         width: 100%;
     }
-    .child-1>div{
+
+    .child-1>div {
         width: 70%;
         margin-top: 0;
     }
-    .child-2>div{
+
+    .child-2>div {
         margin-top: 0;
         width: 70%;
     }
-    nav{
+
+    nav {
         display: block;
         background-color: #f4f4f4;
         width: 100%;

@@ -47,6 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function adminPage(){
-  window.location.href="adminLogin.html"
+function adminPage() {
+  window.location.href = "adminLogin.html"
 }

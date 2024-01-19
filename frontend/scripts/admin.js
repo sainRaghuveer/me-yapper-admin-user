@@ -1,12 +1,12 @@
 //Function for appear spinner
 function showSpinner(spinnerId) {
     document.getElementById(spinnerId).style.display = 'inline-block';
-  }
-  
-  // Function to hide the spinner
-  function hideSpinner(spinnerId) {
+}
+
+// Function to hide the spinner
+function hideSpinner(spinnerId) {
     document.getElementById(spinnerId).style.display = 'none';
-  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const userIdInput = document.getElementById('userIdInput');
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userId1 == "" || userId2 == "") {
             return alert("please enter both userId");
         }
-        viewButton.innerText="wait...";
+        viewButton.innerText = "wait...";
 
         const response = await getUsers(adminToken, [userId1, userId2]);
 
