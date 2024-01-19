@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <nav></nav>
     <div class="parent">
         <div class="child-1">
             <div>
@@ -17,7 +18,10 @@
                 <input type="text" placeholder="UserId" id="userIdInput">
                 <label for="">Password</label>
                 <input type="text" placeholder="Password" id="passwordInput">
-                <button class="create-button">Create</button>
+                <button class="create-button">
+                    <span id="upload-spinner" class="spinner"></span>
+                    Create
+                </button>
             </div>
         </div>
         <div class="child-2">
@@ -31,7 +35,10 @@
                     <span>2</span>
                     <input type="text" placeholder="UserId" id="userPassword">
                 </div>
-                <button class="userFindButton">View</button>
+                <button class="userFindButton">
+                    <span id="upload-spinner-1" class="spinner-1"></span>
+                    View
+                </button>
             </div>
         </div>
     </div>

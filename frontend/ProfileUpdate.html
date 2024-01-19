@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <nav></nav>
     <button id="view" onclick="openNav()">
         View
     </button>
@@ -38,7 +39,10 @@
         </div>
         <input type="file" style="display: none;" id="img-upload"/>
         <label for="img-upload" id="label-btn" class="btn">Choose Photo</label>
-        <button class="btn" style="display: none;" id="upload-button">Upload</button>
+        <button class="btn" style="display: none;" id="upload-button">
+            <span id="upload-spinner" class="spinner"></span>
+            Upload
+        </button>
         
     </div>
 

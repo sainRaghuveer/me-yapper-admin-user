@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <nav></nav>
     <div class="parent">
         <button class="float-admin-button" onclick="adminPage()">Admin Login</button>
         <div class="child-1">
@@ -33,7 +34,11 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">
+                    <span id="spinner" class="spinner-border spinner-border-sm d-none" role="status"
+                        aria-hidden="true"></span>
+                    Login
+                </button>
             </div>
         </div>
     </div>
