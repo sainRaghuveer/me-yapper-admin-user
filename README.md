@@ -49,6 +49,18 @@ use live server
 
 ```
 
+# Default Admin Credentials:
+```bash
+UserID: 1234
+Password: 12345
+```
+
+# Default User Credentials:
+```bash
+UserID: 3456
+Password: 12345
+```
+
 Note:
 - Before doing anything first create `.env` file and put `port` , `mongoURl`.> 
 - `port` is for listening the server.>
