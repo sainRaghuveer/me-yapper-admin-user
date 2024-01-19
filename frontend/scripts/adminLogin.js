@@ -49,5 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function userPage() {
+    document.querySelector(".float-user-button").innerText = "wait..."
     window.location.href = "index.html"
 }

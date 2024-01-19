@@ -49,5 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function adminPage() {
+  document.querySelector(".float-admin-button").innerText = "wait..."
   window.location.href = "adminLogin.html"
 }
