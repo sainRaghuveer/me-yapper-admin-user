@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function createUser(adminToken, userId, password) {
         try {
-            const response = await fetch('http://localhost:8080/api/admin/createUser', {
+            const response = await fetch('https://we-yapper-backend.onrender.com/api/admin/createUser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function getUsers(adminToken, userIds) {
         try {
-            const response = await fetch('http://localhost:8080/api/admin/getUsers', {
+            const response = await fetch('https://we-yapper-backend.onrender.com/api/admin/getUsers', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

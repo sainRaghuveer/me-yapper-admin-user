@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userId = localStorage.getItem("user");
 
     try {
-      const response = await fetch(`http://localhost:8080/singleUser/${userId}`, {
+      const response = await fetch(`https://we-yapper-backend.onrender.com/singleUser/${userId}`, {
         method: 'GET',
       });
 
@@ -148,7 +148,7 @@ async function updateUserData(name, imageData) {
   try {
     const userId = localStorage.getItem("user");
 
-    const response = await fetch(`http://localhost:8080/user/update`, {
+    const response = await fetch(`https://we-yapper-backend.onrender.com/user/update`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

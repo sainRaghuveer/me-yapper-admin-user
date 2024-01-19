@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function manageUser(userId, action) {
         try {
             const adminToken = localStorage.getItem('token');
-            const response = await fetch('http://localhost:8080/api/admin/manage', {
+            const response = await fetch('https://we-yapper-backend.onrender.com/api/admin/manage', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
