@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>${user.userId}</td>
-        <td>${user.profile.name}</td>
+        <td>${user.profile.name==""?"-":user.profile.name}</td>
         <td><img src="${user.profile.photo}" alt="User Photo" id="userPhoto"></td>
         <td>
-          <button class="approve-button" data-user-id="${user.userId}">Done</button>
+        <button style={${user.profile.name=""?"display:none":"display:block"}} class="approve-button" data-user-id="${user.userId}">Done</button>
           <button class="reject-button" data-user-id="${user.userId}">Delete</button>
         </td>
       `;

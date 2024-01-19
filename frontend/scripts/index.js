@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('user', response.user.userId);
         window.location.href = 'ProfileUpdate.html';
       } else if (response.user.role === 'admin') {
-        window.location.href = 'admin.html';
+        alert("You are not authorized here to login");
       }
     } else {
       console.error('Login failed:', response.message);
@@ -40,3 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+function adminPage(){
+  window.location.href="adminLogin.html"
+}

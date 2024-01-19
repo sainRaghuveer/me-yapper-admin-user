@@ -1,12 +1,3 @@
-.float-admin-button{
-    position: absolute;
-    padding: 9px;
-    border: 1px solid #0500ff;
-    top: 10px;
-    right: 10px;
-    color: #0500ff;
-    border-radius: 3px;
-}
 .parent{
     width: 100%;
     /* border: 1px solid red; */
