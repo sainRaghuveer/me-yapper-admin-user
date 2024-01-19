@@ -22,7 +22,7 @@ userRouter.post('/user/update', updateUserImage);
 userRouter.post('/getUsers', getUsers);
 
 //Route for single user details
-userRouter.get('/:userId', getUser);
+userRouter.get('/singleUser/:id', getUser);
 
 module.exports = {
     userRouter

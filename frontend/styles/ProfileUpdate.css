@@ -26,7 +26,8 @@
     height: 100%;
 }
 
-#btn{
+.btn{
+  display: block;
     margin: auto;
     width: 100%;
     padding: 8px;

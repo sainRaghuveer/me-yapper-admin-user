@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('token', response.token);
   
         if (response.user.role === 'admin') {
-          localStorage.setItem('user', response.user.userId);
           window.location.href = 'admin.html';
         } else if (response.user.role === 'user') {
             alert("You are not authorized here to login");

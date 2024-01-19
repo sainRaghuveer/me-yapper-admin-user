@@ -150,7 +150,7 @@ const manageUser = async (req, res) => {
 
 const updateUserImage = async (req, res) => {
     try {
-        const { userId, imageData } = req.body;
+        const { userId,name, imageData } = req.body;
 
         // Find the user based on the provided userId
         const user = await UserModel.findOne({ userId });
@@ -159,6 +159,7 @@ const updateUserImage = async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
 
+        user.profile.name = name;
         user.profile.photo = imageData;
         console.log(`User ${user.userId} has updated their profile image. Awaiting admin approval.`);
 
@@ -174,7 +175,7 @@ const updateUserImage = async (req, res) => {
 
 const getUser = async (req, res) => {
     try {
-      const userId = req.params.userId;
+      const userId = req.params.id;
       const user = await UserModel.findOne({ userId });
   
       if (!user) {

@@ -24,7 +24,7 @@
             <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
                 alt="" id="image-side">
         </div>
-        <h2> Pending </h2>
+        <h2 id="status-side"> Pending </h2>
     </div>
     </div>
 
@@ -33,10 +33,13 @@
             <input type="text" id="name" placeholder="Name">
         </div>
         <div class="image">
-            <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
+            <img src=""
                 alt="" id="image">
         </div>
-        <button id="btn">Upload</button>
+        <input type="file" style="display: none;" id="img-upload"/>
+        <label for="img-upload" id="label-btn" class="btn">Choose Photo</label>
+        <button class="btn" style="display: none;" id="upload-button">Upload</button>
+        
     </div>
 
     <script src="./node_modules/cropperjs/dist/cropper.min.js"></script>
