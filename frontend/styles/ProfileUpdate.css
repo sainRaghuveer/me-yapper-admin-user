@@ -70,7 +70,6 @@ button:hover {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-  /* border: 1px solid gray; */
 }
 
 .sidenav a {
@@ -97,7 +96,6 @@ button:hover {
 
 #name-side {
   width: 55%;
-  margin: 0 100px 10px 80px;
   padding: 12px;
   border: 1px solid gray;
   border-radius: 3px;
@@ -105,14 +103,8 @@ button:hover {
 
 label {
   width: 60%;
-  margin: 0 100px 10px 90px;
 }
 
-.image-sidebar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 h2 {
   text-align: center;
@@ -120,8 +112,6 @@ h2 {
 
 #image-side {
   width: 300px;
-  height: 300px;
-  margin: auto;
 }
 
 .spinner {

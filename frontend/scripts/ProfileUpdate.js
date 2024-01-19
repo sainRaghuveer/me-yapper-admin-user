@@ -76,12 +76,12 @@ button.addEventListener("click", async () => {
 })
 
 function openNav() {
-  document.getElementById("mySidenav").style.width = "500px";
+  document.getElementById("mySidenav").style.width = "min(400px, 100vw)";
   document.querySelector(".container").style.opacity = "0.3"
 }
 
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mySidenav").style.width = "0px";
   document.querySelector(".container").style.opacity = "1"
 }
 
